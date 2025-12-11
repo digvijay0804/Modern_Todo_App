@@ -1,0 +1,17 @@
+# Use the official PostgreSQL image from Docker Hub
+FROM postgres:13
+
+
+# Set environment variables for the database user and password
+# For production, use Docker secrets or another secure method
+ENV POSTGRES_USER=admin
+ENV POSTGRES_PASSWORD=12345
+ENV POSTGRES_DB=mydatabase
+
+
+# Define a mount point for persistent data
+VOLUME ["/var/lib/postgresql/data"]
+
+
+# Expose PostgreSQL port
+EXPOSE 5432

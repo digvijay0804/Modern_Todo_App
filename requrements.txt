@@ -1,0 +1,4 @@
+Flask==2.1.2
+psycopg2-binary==2.9.3
+Werkzeug==2.3.0
+prometheus-flask-exporter==0.22.4
