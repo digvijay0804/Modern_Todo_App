@@ -126,6 +126,3 @@ USER nodejs
 
 
 CMD ["npm", "run", "test:coverage"]
-
-
-

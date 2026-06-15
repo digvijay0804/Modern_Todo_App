@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app-deployment
+  namespace: todo-app
+spec:
+  selector:
+    matchLabels:
+      app: todo-app
+  replicas: 1
+  template:
+    metadata:
+      name: todo-app-pod
+      namespace: todo-app
+      labels:
+        app: todo-app
+    spec:
+      containers:
+      - name: todo-app
+        image: digvijay0804/todo_app:prod
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "production"
+
+        - name: PORT
+          value: "3000"
+
+        - name: PGHOST
+          value: "postgres-service"
+
+        - name: PGUSER
+          value: "admin"
+
+        - name: PGPASSWORD
+          value: "12345"
+
+        - name: PGDATABASE
+          value: "mydatabase"
+
+        - name: PGPORT
+          value: "5432"
